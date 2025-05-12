@@ -257,10 +257,10 @@ import gensim
 from gensim.models import Word2Vec
 import logging
 
-# 设置日志以便观察gensim训练过程
+#设置日志以便观察gensim训练过程
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
-# 示例语料，真实应用中应该用更大的语料库
+#示例语料，真实应用中应该用更大的语料库
 sentences = [
     ['dog', 'barks'],
     ['cat', 'meows'],
@@ -271,20 +271,20 @@ sentences = [
     ['cat', 'sleeps']
 ]
 
-# 创建Word2Vec模型，使用Skip-gram模型架构
+#创建Word2Vec模型，使用Skip-gram模型架构
 model = Word2Vec(sentences, vector_size=5, window=5, min_count=1, sg=1)
 
-# 训练模型
+#训练模型
 model.save("word2vec.model")
-# 使用训练好的模型进行相似度查询
+#使用训练好的模型进行相似度查询
 similarity = model.wv.most_similar('dog', topn=3)
 print("Most similar to 'dog':", similarity)
 
-# 查看'cat'的词向量
+#查看'cat'的词向量
 vector_cat = model.wv['cat']
 print("Vector for 'cat':", vector_cat)
 
-# 保存词向量到文件
+#保存词向量到文件
 model.wv.save_word2vec_format('word2vec.txt', binary=False)
 
 ![image](https://github.com/user-attachments/assets/009500cc-32ee-4b6a-8e5b-91fabfc0de82)
