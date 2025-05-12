@@ -253,7 +253,7 @@ Sense2Vec：对于 "bank"，Sense2Vec 会根据上下文区分它的语义，可
 word2vec⼯具的提出正是为了解决上⾯这个问题。它将每个词表⽰成⼀个定⻓的向量，并使得这些向量能较好地表达不同词之间的相似和类⽐关系。
 
 5.word2vec的代码实现
-import gensim\n
+import gensim
 from gensim.models import Word2Vec
 import logging
 
